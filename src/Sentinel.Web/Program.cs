@@ -1,7 +1,15 @@
+using Sentinel.Web.Configuration;
+using Sentinel.Web.Services.Engine;
 var builder = WebApplication.CreateBuilder(args);
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.Configure<EngineOptions>(
+builder.Configuration.GetSection(EngineOptions.SectionName));
+
+builder.Services.AddHttpClient<IEngineClient, EngineClient>();
 
 var app = builder.Build();
 

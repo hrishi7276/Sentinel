@@ -1,0 +1,25 @@
+﻿@model Sentinel.Web.Models.Engine.HealthResponse
+
+<h2>Sentinel Engine Status</h2>
+
+@if (Model is null)
+{
+    <p>Engine is unavailable.</p>
+}
+else
+{
+    <table class="table">
+        <tr>
+            <th>Status</th>
+            <td>@Model.Status</td>
+        </tr>
+        <tr>
+            <th>Service</th>
+            <td>@Model.Service</td>
+        </tr>
+        <tr>
+            <th>Version</th>
+            <td>@Model.Version</td>
+        </tr>
+    </table>
+}
