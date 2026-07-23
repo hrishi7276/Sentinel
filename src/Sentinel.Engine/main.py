@@ -6,7 +6,7 @@ from app.core.exception_handlers import register_exception_handlers
 app = FastAPI(
     title="Sentinel Engine API",
     description="Trading Engine for the Sentinel Platform",
-    version="0.5.0"
+    version="0.6.0"
 )
 
 register_exception_handlers(app)
@@ -30,6 +30,6 @@ def health():
     return {
         "status": "Healthy",
         "service": "Sentinel.Engine",
-        "version": "0.5.0",
+        "version": "0.6.0",
         "database": db_status
     }
