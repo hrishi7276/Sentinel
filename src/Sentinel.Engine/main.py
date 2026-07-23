@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-
+from app.routers import symbol_router
 from app.database.health import check_database_connection
 
 app = FastAPI(
@@ -8,7 +8,10 @@ app = FastAPI(
     version="0.4.0"
 )
 
-
+app.include_router(
+    symbol_router.router,
+    prefix="/api/v1",
+)
 @app.get("/")
 def root():
     return {
@@ -24,6 +27,6 @@ def health():
     return {
         "status": "Healthy",
         "service": "Sentinel.Engine",
-        "version": "0.3.0",
+        "version": "0.4.0",
         "database": db_status
     }
