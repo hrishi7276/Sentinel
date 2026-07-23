@@ -8,7 +8,9 @@
 
 Sentinel is a modular algorithmic trading platform designed to automate market analysis, strategy execution, portfolio management, and risk control.
 
-The long-term vision is to build a production-ready trading platform capable of supporting multiple strategies, multiple brokers, paper trading, backtesting, and live trading while maintaining enterprise software engineering standards.
+The project is being built using enterprise software engineering principles with a clean, scalable architecture capable of supporting multiple brokers, multiple trading strategies, paper trading, backtesting, and fully automated live trading.
+
+The primary objective is long-term capital preservation and disciplined portfolio growth through systematic trading rather than speculative decision-making.
 
 ---
 
@@ -20,10 +22,10 @@ The long-term vision is to build a production-ready trading platform capable of 
 - FastAPI
 - SQLAlchemy 2.x
 - Alembic
-- Pydantic
 - PostgreSQL
+- Pydantic
 
-## Web Dashboard
+## Frontend
 
 - ASP.NET Core MVC (.NET 10)
 
@@ -36,6 +38,7 @@ The long-term vision is to build a production-ready trading platform capable of 
 - Visual Studio 2026
 - Visual Studio Code
 - Git
+- Swagger / OpenAPI
 - Docker (planned)
 
 ---
@@ -45,44 +48,73 @@ The long-term vision is to build a production-ready trading platform capable of 
 ```
 Sentinel
 │
-├── src
-│   ├── Sentinel.Web            # ASP.NET MVC Dashboard
-│   └── Sentinel.Engine         # FastAPI Trading Engine
+├── app
+│   ├── core
+│   ├── database
+│   ├── models
+│   ├── repositories
+│   ├── routers
+│   ├── schemas
+│   ├── services
+│   └── utils
 │
-├── docs                        # Documentation
-├── docker                      # Docker configuration
-├── scripts                     # Utility scripts
-├── tests                       # Automated tests
+├── alembic
+├── tests
+├── docs
+├── scripts
 │
+├── main.py
+├── requirements.txt
 └── README.md
 ```
 
 ---
 
-# Features (Roadmap)
+# Completed Milestones
+
+- ✅ Project Initialization
+- ✅ FastAPI Bootstrap
+- ✅ Configuration Management
+- ✅ PostgreSQL Integration
+- ✅ SQLAlchemy ORM
+- ✅ Database Session Management
+- ✅ Health Monitoring
+- ✅ Alembic Migration Framework
+- ✅ Initial Database Models
+- ✅ Repository Layer
+- ✅ Service Layer
+
+---
+
+# Roadmap
+
+## Core Platform
+
+- User Authentication
+- Role Based Authorization
+- Configuration Management
 
 ## Trading
 
-- Live Market Scanner
-- Multi-Strategy Engine
+- Strategy Engine
+- Market Scanner
+- Technical Indicators
 - Paper Trading
 - Live Trading
-- Backtesting
-- Position Management
-
-## Risk Management
-
-- Dynamic Position Sizing
-- Portfolio Risk Limits
-- Drawdown Protection
-- Trade Validation
-- Stop Loss Automation
+- Order Execution
 
 ## Portfolio
 
-- Portfolio Tracking
+- Portfolio Management
+- Position Tracking
 - Performance Analytics
-- Profit & Loss Monitoring
+- Trade Journal
+
+## Risk Engine
+
+- Position Sizing
+- Exposure Management
+- Drawdown Protection
 - Capital Allocation
 
 ## Integrations
@@ -90,105 +122,68 @@ Sentinel
 - Broker APIs
 - Market Data Providers
 - Notifications
-- Email Alerts
-- Telegram Alerts
-
-## AI
-
-- AI-assisted Trade Analysis
-- Strategy Evaluation
-- Performance Insights
-- Risk Recommendations
+- AI Decision Support
 
 ---
 
-# Current Progress
+# Current Status
 
-## Version
-
-**v0.4.0**
+**Version:** **v0.5.0**
 
 ### Completed
 
-- ✅ Git Repository Initialized
-- ✅ Project Architecture
-- ✅ FastAPI Application
-- ✅ Health Endpoint
-- ✅ Configuration Management
-- ✅ Environment Variables
-- ✅ PostgreSQL Integration
-- ✅ SQLAlchemy ORM Setup
-- ✅ Database Session Management
-- ✅ Base Model Architecture
-- ✅ Database Health Check
-- ✅ API Versioning
-- ✅ Swagger/OpenAPI Documentation
-- ✅ Alembic Migration Framework
+- FastAPI application
+- Health API
+- Swagger Documentation
+- Environment configuration
+- SQLAlchemy integration
+- PostgreSQL connectivity
+- Alembic migrations
+- Database models
+- Repository pattern
+- Service layer
+- Symbol CRUD API
 
-### In Progress
+### Next Milestone
 
-- 🚧 Initial Database Models
-- 🚧 Managed Database Migrations
-
-### Upcoming
-
+- Generic Repository
+- Exception Handling Middleware
+- Logging Framework
 - Authentication
-- User Management
-- Trading Strategies
-- Market Data Service
-- Order Management
-- Portfolio Service
+- User Module
 
 ---
 
 # Engineering Principles
 
-Sentinel is being developed with enterprise software engineering practices.
+Sentinel follows modern enterprise engineering practices.
 
 - Clean Architecture
-- Modular Design
 - SOLID Principles
+- Repository Pattern
+- Service Layer Pattern
 - Dependency Injection
 - Type Safety
-- Database Migrations
+- Database Versioning
 - API Versioning
-- Automated Testing
-- Observability
-- Security First
+- Testability
+- Scalability
+- Security
 - Broker Independence
-
----
-
-# Development Workflow
-
-```
-Feature
-    ↓
-Develop
-    ↓
-Test
-    ↓
-Database Migration
-    ↓
-Git Commit
-    ↓
-Version Tag
-    ↓
-Release
-```
 
 ---
 
 # Long-Term Vision
 
-Sentinel is designed to become a professional automated trading platform capable of:
+Sentinel is being designed as a professional automated trading platform capable of:
 
+- Running multiple strategies simultaneously
 - Managing multiple portfolios
-- Running multiple trading strategies simultaneously
 - Supporting multiple brokers
-- Executing trades automatically
-- Preserving capital through disciplined risk management
-- Scaling from paper trading to production deployment
+- Automated trade execution
+- Intelligent risk management
+- AI-assisted market analysis
+- Enterprise-grade observability and reliability
 
 ---
 

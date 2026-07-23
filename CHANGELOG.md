@@ -2,7 +2,45 @@
 
 All notable changes to this project will be documented in this file.
 
-This project follows **Semantic Versioning (SemVer)**.
+This project follows Semantic Versioning (SemVer).
+
+---
+
+## [0.5.0] - 2026-07-24
+
+### Added
+
+- Repository Layer implementation
+- Service Layer implementation
+- Symbol Repository
+- Symbol Service
+- Symbol API endpoints
+- CRUD operations for Symbols
+- Pydantic request/response schemas
+- Dependency Injection for services
+- Duplicate symbol validation
+- HTTP 409 Conflict handling for duplicate symbols
+
+### Improved
+
+- Clear separation between API, business logic, and data access layers
+- Modular architecture for future domain services
+- Cleaner dependency management
+- Better API error handling
+
+### Notes
+
+Milestone 11 completed.
+
+Sentinel now follows a production-style layered architecture using:
+
+- Routers
+- Services
+- Repositories
+- Models
+- Schemas
+
+This establishes the application's business layer and prepares the project for authentication, additional domain modules, and trading engine development.
 
 ---
 
@@ -11,24 +49,17 @@ This project follows **Semantic Versioning (SemVer)**.
 ### Added
 
 - SQLAlchemy ORM integration
-- PostgreSQL database connectivity
+- PostgreSQL connectivity
 - Database session management
-- Declarative Base architecture
-- Database package organization
-- Database health check integration
-- Alembic migration framework initialized
-- Initial migration configuration
-- Version updated in Health API to `v0.4.0`
+- Declarative Base
+- Alembic migration framework
+- Database health checks
 
 ### Improved
 
-- Project architecture refined for future scalability
-- Backend foundation prepared for managed database migrations
-- Health endpoint now validates database connectivity
-
-### Notes
-
-This release establishes Sentinel's database infrastructure and migration workflow, providing a solid foundation for future domain models and persistent storage.
+- Backend infrastructure
+- Migration workflow
+- Database architecture
 
 ---
 
@@ -36,22 +67,11 @@ This release establishes Sentinel's database infrastructure and migration workfl
 
 ### Added
 
-- FastAPI application bootstrap
-- Health endpoint (`/health`)
-- Configuration management using environment variables
-- Centralized application settings
-- PostgreSQL configuration
-- Pydantic-based configuration management
-- OpenAPI (Swagger) documentation
-
-### Improved
-
-- Application startup structure
-- Environment configuration organization
-
-### Notes
-
-Sentinel transitioned from a project skeleton to a functional backend service capable of exposing APIs and validating application health.
+- FastAPI bootstrap
+- Health endpoint
+- Environment configuration
+- Swagger/OpenAPI
+- Application configuration management
 
 ---
 
@@ -60,19 +80,8 @@ Sentinel transitioned from a project skeleton to a functional backend service ca
 ### Added
 
 - Backend project organization
-- Configuration directory
-- Environment (`.env`) support
-- Initial dependency management
 - Core application modules
-
-### Improved
-
-- Project folder structure
-- Backend modularization
-
-### Notes
-
-Focused on preparing the backend architecture before implementing API functionality.
+- Environment support
 
 ---
 
@@ -81,24 +90,20 @@ Focused on preparing the backend architecture before implementing API functional
 ### Added
 
 - Repository initialized
-- ASP.NET Core MVC project created
-- Python FastAPI engine initialized
-- Python virtual environment configured
-- Initial project architecture established
-- Root `.gitignore` added
-- Project documentation started
-
-### Notes
-
-Initial project setup. Established the foundation for the Sentinel platform.
+- ASP.NET Core MVC project
+- Python FastAPI project
+- Initial architecture
+- Documentation
+- Git configuration
 
 ---
 
 ## Version History
 
-| Version | Date | Summary |
-|---------|------------|--------------------------------------------|
-| 0.4.0 | 2026-07-24 | Database layer, SQLAlchemy, PostgreSQL, Alembic |
-| 0.3.0 | 2026-07-23 | FastAPI foundation, configuration, health API |
-| 0.2.0 | 2026-07-22 | Backend architecture and configuration |
-| 0.1.0 | 2026-07-22 | Initial repository and project setup |
+| Version | Milestone | Summary |
+|----------|-----------|---------|
+| 0.5.0 | Repository & Service Layer | Layered architecture, Symbol CRUD |
+| 0.4.0 | Database Infrastructure | SQLAlchemy, PostgreSQL, Alembic |
+| 0.3.0 | FastAPI Foundation | API, Health, Swagger |
+| 0.2.0 | Backend Architecture | Configuration & project structure |
+| 0.1.0 | Project Initialization | Repository setup |

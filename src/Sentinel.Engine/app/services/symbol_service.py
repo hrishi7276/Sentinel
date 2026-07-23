@@ -1,6 +1,6 @@
 from app.models.symbol import Symbol
 from app.repositories.symbol_repository import SymbolRepository
-from fastapi import HTTPException, status
+from app.exceptions.symbol_exceptions import DuplicateSymbolException
 
 class SymbolService:
     def __init__(self, repository: SymbolRepository):
@@ -13,11 +13,8 @@ class SymbolService:
         is_active: bool = True,
     ) -> Symbol:
 
-        if self.repository.exists(symbol):\
-            raise HTTPException(
-            status_code=status.HTTP_409_CONFLICT,
-            detail=f"Symbol '{symbol}' already exists."
-            )
+        if self.repository.exists(symbol):
+            raise DuplicateSymbolException(symbol)
             
 
         new_symbol = Symbol(

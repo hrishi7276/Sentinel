@@ -1,8 +1,7 @@
 from fastapi import APIRouter, Depends
-from sqlalchemy.orm import Session
 
-from app.database.session import get_db
-from app.repositories.symbol_repository import SymbolRepository
+
+from app.dependencies.services import get_symbol_service
 from app.schemas.symbol import SymbolCreate, SymbolResponse
 from app.services.symbol_service import SymbolService
 
@@ -12,9 +11,6 @@ router = APIRouter(
 )
 
 
-def get_symbol_service(db: Session = Depends(get_db)) -> SymbolService:
-    repository = SymbolRepository(db)
-    return SymbolService(repository)
 
 
 @router.post(
