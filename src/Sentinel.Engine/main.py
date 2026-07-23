@@ -5,7 +5,7 @@ from app.database.health import check_database_connection
 app = FastAPI(
     title="Sentinel Engine API",
     description="Trading Engine for the Sentinel Platform",
-    version="0.3.0"
+    version="0.4.0"
 )
 
 
